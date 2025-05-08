@@ -1,21 +1,21 @@
 {
-  "dataflow_template_name": "Jdbc_to_BigQuery_Flex",
-  "dataflow_template_version": "latest",
-  "dataflow_location": "us-central1",
-  "project_id": "pso-training-wa-may2025",
-  "dataflow_max_workers": "10",
-  "dataflow_temp_bucket": "pso-training-wa-may2025-temp",
-  "network": "sample-vpc",
-  "subnetwork": "regions/us-central1/subnetworks/default-us-central1",
-  "dataflow_job_params": {
-    "driverJars": "gs://pso-training-wa-may2025_aef_artifacts_bucket/jdbcjars/postgresql-42.7.3.jar",
-    "driverClassName": "org.postgresql.Driver",
-    "connectionURL": "jdbc:postgresql://10.60.0.3:5432/postgres",
-    "outputTable": "pso-training-wa-may2025:aef_landing_sample_dataset.raw_suppliers",
-    "query": "SELECT * FROM public.suppliers",
-    "bigQueryLoadingTemporaryDirectory": "gs://pso-training-wa-may2025-temp/jdbc_temp/suppliers/",
-    "username": "user1",
-    "password": "changeme",
-    "createDisposition": "CREATE_NEVER"
-  }
+"dataflow_template_name": "Jdbc_to_BigQuery_Flex",
+"dataflow_template_version": "latest",
+"dataflow_location": "us-central1",
+"project_id": "aef-demo-4",
+"dataflow_max_workers": "10",
+"dataflow_temp_bucket": "aef-demo-4-temp",
+"network": "sample-vpc",
+"subnetwork": "regions/us-central1/subnetworks/default-us-central1",
+"dataflow_job_params": {
+"driverJars": "gs://aef-demo-4_aef_artifacts_bucket/jdbcjars/postgresql-42.7.3.jar",
+"driverClassName": "org.postgresql.Driver",
+"connectionURL": "jdbc:postgresql://10.60.0.3:5432/postgres",
+"outputTable": "aef-demo-4:aef_landing_sample_dataset.raw_transactions",
+"query": "SELECT * FROM public.raw_transactions",
+"bigQueryLoadingTemporaryDirectory": "gs://aef-demo-4-temp/jdbc_temp/transactions/",
+"username": "user1",
+"password": "changeme",
+"createDisposition": "CREATE_IF_NEEDED"
+}
 }
